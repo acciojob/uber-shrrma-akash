@@ -10,3 +10,4 @@ import com.driver.model.Driver;
 public interface DriverRepository extends JpaRepository<Driver, Integer>{
 
 }
+
