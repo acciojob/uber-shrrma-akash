@@ -5,17 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Driver{
+public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer driverId;
+
     private String mobile;
     private String password;
 
-    @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "driver",cascade = CascadeType.ALL)
     private Cab cab;
 
-    @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
     List<TripBooking> tripBookingList = new ArrayList<>();
 
     public Integer getDriverId() {
