@@ -3,17 +3,18 @@ package com.driver.model;
 import javax.persistence.*;
 
 @Entity
-public class TripBooking{
+public class TripBooking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer tripBookingId;
-    private String fromLocation;
-    private String toLocation;
-    private Integer distanceInKm;
+
+    private String fromLocation; //The start location of the trip
+    private String toLocation; //The end location of the trip
+    private int distanceInKm;
 
     @Enumerated(value = EnumType.STRING)
     private TripStatus status;
-    private Integer bill;
+    private int bill;
 
     @ManyToOne
     @JoinColumn
@@ -47,11 +48,11 @@ public class TripBooking{
         this.toLocation = toLocation;
     }
 
-    public Integer getDistanceInKm() {
+    public int getDistanceInKm() {
         return distanceInKm;
     }
 
-    public void setDistanceInKm(Integer distanceInKm) {
+    public void setDistanceInKm(int distanceInKm) {
         this.distanceInKm = distanceInKm;
     }
 
@@ -63,11 +64,11 @@ public class TripBooking{
         this.status = status;
     }
 
-    public Integer getBill() {
+    public int getBill() {
         return bill;
     }
 
-    public void setBill(Integer bill) {
+    public void setBill(int bill) {
         this.bill = bill;
     }
 
